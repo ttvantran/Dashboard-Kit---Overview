@@ -1,0 +1,164 @@
+// MODAL & FORMS
+
+.modal {
+    &-content {
+        border-radius: $border-radius;
+        border: 1px solid $grayscale-divider;
+    }
+
+    &-header {
+        border-bottom: 1px solid $grayscale-divider;
+        padding: 24px 32px;
+    }
+
+    &-title {
+        font-family: $font-family;
+        font-weight: 700;
+        font-size: 19px;
+        line-height: 24px;
+        letter-spacing: 0.4px;
+        color: $grayscale-black;
+    }
+
+    &-body {
+        padding: 24px 32px;
+
+        .form-select {
+            padding-right: 40px;
+        }
+    }
+
+    &-footer {
+        border-top: 1px solid $grayscale-divider;
+        padding: 24px 32px;
+    }
+}
+
+.form-label {
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: $grayscale-black;
+    margin-bottom: 8px;
+}
+
+.form-control,
+.form-select {
+    border: 1px solid $grayscale-divider;
+    border-radius: $border-radius;
+    padding: 12px 16px;
+    font-family: $font-family;
+    font-size: 14px;
+    color: $grayscale-black;
+    width: 100%;
+
+    &:focus {
+        border-color: $accent-default;
+        box-shadow: 0 0 0 3px $accent-light;
+        outline: none;
+    }
+}
+
+.form-select {
+    box-sizing: border-box;
+
+    option {
+        width: 100%;
+        padding: 8px 12px;
+    }
+}
+
+.btn-primary {
+    background-color: $accent-default;
+    border: none;
+    border-radius: $border-radius;
+    padding: 12px 24px;
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+
+    &:hover {
+        background-color: #2941E8;
+    }
+}
+
+.btn-secondary {
+    background-color: $grayscale-gray-lightest;
+    border: none;
+    border-radius: $border-radius;
+    padding: 12px 24px;
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    color: $grayscale-gray;
+
+    &:hover {
+        background-color: $grayscale-gray-light;
+    }
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+    border-width: 0.2em;
+}
+
+// Toast Notification
+.toast-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+    padding: 16px 24px;
+    border-radius: $border-radius;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 9999;
+    animation: slideIn $transition-speed ease-out;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 300px;
+    max-width: 400px;
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: 14px;
+    transition: opacity $transition-speed ease;
+}
+
+.toast-close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

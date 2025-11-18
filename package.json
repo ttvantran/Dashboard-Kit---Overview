@@ -1,0 +1,19 @@
+{
+  "name": "frontend-framwork",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch public/assets/scss:public/assets/css --style=expanded",
+    "lite": "lite-server --baseDir=\"public\"",
+    "start": "concurrently \"npm run sass\" \"npm run lite\""
+  },
+  "keywords": [],
+  "author": "Thi Thanh Van Tran",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "lite-server": "^2.6.1",
+    "sass": "^1.94.0"
+  }
+}

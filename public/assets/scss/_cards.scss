@@ -1,0 +1,390 @@
+// CARDS & STAT BLOCKS
+
+// Stat Cards
+.ticket-blocks {
+    margin-bottom: 30px;
+
+    > [class*="col-"] {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
+.stat-card {
+    background-color: $grayscale-white;
+    border-radius: $border-radius;
+    border: 1px solid $grayscale-divider;
+    height: 134px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all $transition-speed ease;
+    cursor: pointer;
+    margin-bottom: 16px;
+
+    &:hover {
+        border: 2px solid $accent-default;
+        box-shadow: 0 0 0 2px $accent-light;
+
+        .stat-label,
+        .stat-number {
+            color: $accent-default;
+        }
+    }
+
+    .card-body {
+        padding: 24px 32px;
+    }
+}
+
+.stat-label {
+    font-family: $font-family;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+    color: $grayscale-gray;
+    text-align: center;
+    margin-bottom: 12px;
+    transition: color $transition-speed ease;
+}
+
+.stat-number {
+    font-family: $font-family;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: 1px;
+    color: $grayscale-black;
+    text-align: center;
+    margin: 0;
+    transition: color $transition-speed ease;
+}
+
+// General Cards
+.card {
+    background-color: $grayscale-white;
+    border-radius: $border-radius;
+    border: 1px solid $grayscale-divider;
+    overflow: hidden;
+
+    &-body {
+        padding: 32px;
+    }
+
+    &-title {
+        font-family: $font-family;
+        font-weight: 700;
+        font-size: 19px;
+        line-height: 24px;
+        letter-spacing: 0.4px;
+        color: $grayscale-black;
+        margin-bottom: 8px;
+    }
+
+    &-subtitle {
+        font-family: $font-family;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.1px;
+        color: $grayscale-gray;
+        margin: 0;
+    }
+}
+
+// Trends Card
+.trends-card {
+    min-height: 546px;
+}
+
+.legend {
+    display: flex;
+    gap: 32px;
+
+    &-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: $font-family;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 0.1px;
+        color: $grayscale-gray;
+    }
+
+    &-line {
+        width: 16px;
+        height: 2px;
+    }
+}
+
+.chart-container {
+    margin-top: 38px;
+    position: relative;
+    width: 100%;
+    height: 330px;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+// Stats Column
+.stats-card .card-body,
+.stats-column-card .card-body {
+    padding: 0;
+}
+
+.stat-item {
+    padding: 24px 32px;
+    text-align: center;
+
+    h6 {
+        font-family: $font-family;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        letter-spacing: 0.3px;
+        color: $grayscale-gray;
+        margin-bottom: 6px;
+    }
+
+    h3 {
+        font-family: $font-family;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 30px;
+        letter-spacing: 0.3px;
+        color: $grayscale-black;
+        margin: 0;
+    }
+}
+
+.stat-divider {
+    height: 1px;
+    background-color: $grayscale-divider;
+}
+
+// Trends Row (seamless cards)
+.trends-row {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 30px;
+
+    > .col-lg-8 {
+        padding-right: 0;
+
+        > .card {
+            border-right: none;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            min-height: 546px;
+            margin-bottom: 0;
+        }
+    }
+
+    > .col-lg-4 {
+        padding-left: 0;
+
+        > .card {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            min-height: 546px;
+            margin-bottom: 0;
+        }
+    }
+
+    .card {
+        height: 546px;
+    }
+
+    .chart-container {
+        height: 400px;
+    }
+}
+
+// View Links
+.view-link {
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: $accent-default;
+    text-decoration: none;
+    transition: opacity $transition-speed;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+// List Groups
+.list-group-flush {
+    margin: 0 -32px;
+}
+
+.list-group-item {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid $grayscale-divider;
+    padding: 18px 32px;
+    background-color: transparent;
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: $grayscale-black;
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+// Create Task Input
+
+.create-task-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    border-bottom: 1px solid $grayscale-divider;
+    margin: 0 -32px 0px -32px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    
+    background-color: rgba($accent-default, 0.02);
+    
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 0;
+        background-color: $accent-default;
+        transition: width 0.2s ease;
+    }
+    
+    &:hover {
+        background-color: rgba($accent-default, 0.06);
+
+        &::before {
+            width: 3px;
+        }
+        
+        .create-task-text {
+            color: $accent-default;
+            font-weight: 600;
+        }
+        
+        .btn-add-task img {
+            opacity: 1;
+            transform: scale(1.15);
+        }
+    }
+    &:focus-visible {
+        outline: 2px solid $accent-default;
+        outline-offset: -2px;
+    }
+}
+
+.create-task-text {
+    font-family: $font-family;
+    font-weight: 700; 
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    color: $grayscale-gray;
+    flex: 1;
+    text-decoration: underline; 
+    text-decoration-style: solid;
+    text-underline-offset: 7px; 
+    transition: all 0.2s ease;
+}
+
+.btn-add-task {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+
+    img {
+        width: 16px;
+        height: 16px;
+        opacity: 0.6; 
+        transition: all 0.2s ease;
+    }
+}
+
+
+// Task Checkboxes
+.form-check-input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+    border: 2px solid $grayscale-gray-light;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0;
+    flex-shrink: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    position: relative;
+
+    &:checked {
+        background-color: $accent-default;
+        border-color: $accent-default;
+    }
+}
+
+.task-label {
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: $grayscale-black;
+    cursor: pointer;
+    margin: 0;
+}
+
+// Badges
+.badge {
+    font-family: $font-family;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: $border-radius;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &-urgent {
+        background-color: $yellow-default;
+        color: $grayscale-white;
+    }
+
+    &-new {
+        background-color: $green-default;
+        color: $grayscale-white;
+    }
+
+    &-default {
+        background-color: $grayscale-gray-lightest;
+        color: $grayscale-gray;
+    }
+}

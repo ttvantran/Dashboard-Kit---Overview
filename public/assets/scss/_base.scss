@@ -1,0 +1,48 @@
+:root {
+    --sidebar-bg: #{$sidebar-bg};
+    --accent-default: #{$accent-default};
+    --grayscale-black: #{$grayscale-black};
+    --grayscale-gray: #{$grayscale-gray};
+    --grayscale-gray-light: #{$grayscale-gray-light};
+    --grayscale-white: #{$grayscale-white};
+    --sidebar-gray: #{$sidebar-gray};
+    --accent-light: #{$accent-light};
+    --grayscale-divider: #{$grayscale-divider};
+    --grayscale-gray-lightest: #{$grayscale-gray-lightest};
+    --green-default: #{$green-default};
+    --yellow-default: #{$yellow-default};
+    --grayscale-bg: #{$grayscale-bg};
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family;
+    background-color: $grayscale-bg;
+    color: $grayscale-black;
+    overflow-x: hidden;
+    position: relative;
+}
+
+html, body {
+    max-width: 100%;
+}
+
+.container-fluid {
+    padding: 0;
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+main {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+.row {
+    margin: 0;
+}

@@ -1,0 +1,362 @@
+// RESPONSIVE DESIGN - MOBILE FIRST 
+
+// Hamburger Menu Button
+.sidebar-toggle {
+    display: block; 
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all $transition-speed ease;
+    position: relative;
+    z-index: 1100;
+
+    span {
+        display: block;
+        width: 24px;
+        height: 3px;
+        background-color: $grayscale-black;
+        margin: 4px 0;
+        transition: 0.3s;
+        border-radius: 2px;
+    }
+
+    &.hidden {
+        opacity: 0;
+        pointer-events: none;
+        transform: scale(0.8);
+    }
+
+    &.floating {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: $grayscale-white;
+        border: 1px solid $grayscale-divider;
+        border-radius: $border-radius;
+        padding: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        z-index: 1100;
+        animation: slideIn $transition-speed ease-out;
+
+        span {
+            width: 20px;
+            margin: 3px 0;
+        }
+    }
+}
+
+.header-left {
+    gap: 16px;
+
+    &.has-floating-menu {
+        padding-left: 60px;
+    }
+}
+
+// Sidebar hidden by default 
+.sidebar {
+    transform: translateX(-100%);
+    
+    &.show {
+        transform: translateX(0);
+    }
+}
+
+// Main content full width 
+main {
+    margin-left: 0;
+    padding: 20px 16px;
+}
+
+// Hide user name 
+.user-name {
+    display: none;
+}
+
+.page-title {
+    font-size: 20px;
+}
+
+.dashboard-header {
+    margin-bottom: 30px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 16px;
+}
+
+.stat-number {
+    font-size: 32px;
+}
+
+.trends-row .chart-container {
+    height: 300px;
+}
+
+.stats-card .card-body,
+.stats-column-card .card-body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    flex: 1 1 100%; 
+    padding: 16px;
+
+    h6 {
+        font-size: 12px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+}
+
+.stat-divider {
+    display: none;
+}
+
+// Mobile toast notification
+.toast-notification {
+    bottom: 80px;
+    right: 16px;
+    left: 16px;
+    min-width: auto;
+    max-width: none;
+}
+
+// Sidebar overlay when open on mobile
+body.sidebar-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+
+    &::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    main {
+        position: fixed;
+        width: 100%;
+        overflow: hidden;
+    }
+}
+
+.trends-row {
+    > .col-lg-8,
+    > .col-lg-4 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    > .col-lg-8 > .card,
+    > .col-lg-4 > .card {
+        border-radius: $border-radius;
+        border: 1px solid $grayscale-divider;
+        margin-bottom: 20px;
+        height: auto;
+    }
+}
+
+// SMALL TABLET (≥576px) 
+@media (min-width: 576px) {
+    .page-title {
+        font-size: 22px;
+    }
+    
+    .stat-number {
+        font-size: 36px;
+    }
+
+    .user-name {
+        display: block;
+    }
+    
+    // 2 columns for stat items
+    .stat-item {
+        flex: 1 1 50%;
+        min-width: 150px;
+    }
+}
+
+
+// TABLET (≥768px) 
+@media (min-width: 768px) and (max-width: 991px) {
+    main {
+        padding: 30px 24px;
+    }
+    
+    .col-md-9 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .user-name {
+        display: block;
+    }
+
+    .page-title {
+        font-size: 24px;
+    }
+    
+    .dashboard-header {
+        margin-bottom: 40px;
+    }
+    
+    .card-body {
+        padding: 24px;
+    }
+    
+    .card-title {
+        font-size: 18px;
+    }
+    
+    .stat-number {
+        font-size: 40px;
+    }
+    
+    .trends-row .chart-container {
+        height: 350px;
+    }
+}
+
+// DESKTOP (≥992px)
+
+@media (min-width: 992px) {
+
+    .sidebar-toggle {
+        display: none;
+    }
+
+    .sidebar {
+        transform: translateX(0);
+    }
+
+    main {
+        margin-left: 255px;
+        padding: 41px 32px 30px 32px;
+    }
+
+    .user-name {
+        display: block;
+    }
+
+    .dashboard-header {
+        margin-bottom: 54px;
+    }
+
+    .card-body {
+        padding: 32px;
+    }
+    
+    .card-title {
+        font-size: 19px;
+    }
+
+    .stats-card .card-body{
+        display: block; 
+    }
+    
+    .stat-item {
+        padding: 24px 32px;
+
+        h6 {
+            font-size: 16px;
+        }
+
+        h3 {
+            font-size: 24px;
+        }
+    }
+
+    .trends-row .stat-item {
+        flex: 1 ; 
+        display: flex ;
+        flex-direction: column ;
+        justify-content: center ;
+    }
+
+    .stat-divider {
+        display: block;
+    }
+    
+    .trends-row .chart-container {
+        height: 482px;
+    }
+    
+    .trends-row {
+        > .col-lg-8 {
+            padding-right: 0;
+            
+            > .card {
+                border-right: none;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                height: 582px;
+                margin-bottom: 0;
+            }
+        }
+
+        > .col-lg-4 {
+            padding-left: 0;
+            > .card {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                height: 582px;
+                margin-bottom: 0;
+                display: flex;
+                flex-direction: column;
+            }
+            > .card > .card-body {
+                display: flex;
+                flex-direction: column;
+                padding: 0;
+                height: 100%;
+            }
+            .stat-item {
+                flex: 1;
+                display: flex;
+                flex-direction: column ;
+                justify-content: center ;
+            }
+            .stat-divider {
+                flex: 0 0 auto;
+                height: 1px;
+            }
+        }
+    }
+
+    .toast-notification {
+        bottom: 20px;
+        right: 20px;
+        left: auto;
+        min-width: 300px;
+        max-width: 400px;
+    }
+}
+
+// LARGE DESKTOP (≥1200px)
+
+@media (min-width: 1200px) {
+    main {
+        padding: 41px 48px 30px 48px;
+    }
+    
+    .trends-row .chart-container {
+        height: 430px;
+    }
+}
